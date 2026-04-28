@@ -99,7 +99,7 @@ let events = [
         image: "./assets/img/book1.jpg",
         mapImg: "./assets/img/qanauatmap.jpg",
         description: "حدث أكاديمي رائد يجمع كبرى الجامعات والمؤسسات التعليمية من مختلف أنحاء الوطن العربي، لتبادل الخبرات ومناقشة مستقبل التعليم العالي وفتح آفاق جديدة للطلاب والباحثين.",
-        gallery: ["./assets/img/book1.jpg","./assets/img/book2.jpg","./assets/img/book3.jpg","./assets/img/book4.jpg","./assets/img/book5.jpg"]
+        gallery: ["./as sets/img/book1.jpg","./assets/img/book2.jpg","./assets/img/book3.jpg","./assets/img/book4.jpg","./assets/img/book5.jpg"]
     }
 ];
 
@@ -117,7 +117,9 @@ function displayEvents() {
                     <img src="${event.image}" class="card-img-top" alt="${event.title}">
                     <div class="card-body">
                         <h5 class="card-title">${event.title}</h5>
-                        <p class="card-text text-muted">${event.date}</p>
+                        <p class="card-text text-muted">التاريخ: ${event.date}</p>
+                        <p class="card-text text-muted">المكان: ${event.location}</p>
+                        <p class="card-text text-muted">الوصف: ${event.description}</p>
                         <button class="btn btn-primary" onclick="goToEvent(${event.id})">
                             عرض التفاصيل
                         </button>
