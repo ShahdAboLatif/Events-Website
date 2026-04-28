@@ -148,6 +148,16 @@ function displayEventDetails() {
     const event = events.find(e => e.id == savedId);
 
     if (event) {
+
+        let galleryHTML = "";
+        for (let i = 0; i < event.gallery.length; i++) {
+            galleryHTML += `
+                <div class="col-4">
+                    <img src="${event.gallery[i]}" class="img-fluid rounded" alt="صورة ${i + 1}">
+                </div>
+            `;
+        }
+
         detailsDiv.innerHTML = `
             <div class="card shadow">
                 <img src="${event.image}" class="card-img-top" alt="${event.title}">
@@ -157,6 +167,10 @@ function displayEventDetails() {
                     <p><strong>المكان:</strong> ${event.location}</p>
                     <hr>
                     <p class="card-text">${event.description}</p>
+                    <h4 class="mt-4 mb-3">معرض الصور</h4>
+                    <div class="row g-2">
+                        ${galleryHTML}
+                    </div>
                     <button class="btn btn-success">إضافة إلى التقويم</button>
                     <button class="btn btn-outline-primary">المشاركة</button>
                 </div>
@@ -166,3 +180,7 @@ function displayEventDetails() {
         detailsDiv.innerHTML = `<div class="alert alert-danger">الفعالية غير موجودة!</div>`;
     }
 }
+
+// home page
+
+
