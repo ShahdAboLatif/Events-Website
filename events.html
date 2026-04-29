@@ -26,7 +26,42 @@
         
     </header>
     <main>
-<div class="container py-5">
+        <div>
+            <!-- filters -->
+            <div class="container mt-4">
+                <div class="row g-3 align-items-end justify-content-center">
+                    <div class="col-md-3">
+                        <label for="placeFilter" class="form-label">المنطقة</label>
+                        <select class="form-select" id="placeFilter">
+                            <option selected value="all">كل المناطق</option>
+                            <option value="riyadh">الرياض</option>
+                            <option value="jeddah">جدة</option>
+                            <option value="dammam">الدمام</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="dateFilter" class="form-label">التاريخ</label>
+                        <input type="date" class="form-control" id="dateFilter">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="categoryFilter" class="form-label">التصنيف</label>
+                        <select class="form-select" id="categoryFilter">
+                            <option selected value="all">كل التصنيفات</option>
+                            <option value="ثقافة">ثقافة</option>
+                            <option value="رياضة">رياضة</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-auto">
+                        <button class="btn btn-primary px-4" id="filterBtn" onclick="displayFilteredEvents()">تصفية</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-5">
         <h1 class="text-center mb-4">الفعاليات القادمة</h1>
         
         <div class="row" id="eventsContainer">

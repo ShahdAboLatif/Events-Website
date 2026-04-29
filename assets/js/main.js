@@ -139,9 +139,16 @@ function goToEvent(eventId) {
     window.location.href = "event.html";
 }
 
-// ============================================
+// display filtered events 
+
+function displayFilteredEvents(){
+
+
+}
+
+
 // EVENT DETAILS PAGE
-// ============================================
+
 function displayEventDetails() {
     const detailsDiv = document.getElementById("eventDetails");
     if (!detailsDiv) return;
