@@ -1,69 +1,3 @@
-//contact page
-function validateInputs(event){
-
-// prevent the page from refreshing
-    event.preventDefault();
-
-    // get alert items
-    let errAlert = document.getElementById("errorAlert");
-    let emailErrAlert = document.getElementById("emailAlert");
-    let successAlert = document.getElementById("successAlert");
-
-     // HIDE ALL ALERTS FIRST (add this)
-    errAlert.classList.add("d-none");
-    emailErrAlert.classList.add("d-none");
-    successAlert.classList.add("d-none");
-
-//    get values
-    let inputs = [
-        document.getElementById('fullName').value,
-        document.getElementById('email').value,
-        document.getElementById('message').value
-    ];
-
-    // the correct email pattern to check with the email value 
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    // check if all values are not empty 
-    let isEmpty = false;
-
-        for (let i = 0; i < inputs.length; i++) {
-            if (inputs[i].trim() === "") {
-                isEmpty = true;
-                break;
-            }
-        }
-
-    if (isEmpty) {
-        errAlert.classList.remove("d-none");
-
-    } 
-    else if (!emailPattern.test(inputs[1])) {
-        emailErrAlert.classList.remove("d-none");
-    } 
-    else {
-        successAlert.classList.remove("d-none"); 
-    }
-}
-
-//events page
-// an array of all events we have
-const allEvents = [
-    { title: "ندوة تقنية", date: "2024-05", category: "تعليمي", img: "event01.jpg" },
-    { title: "بطولة تنس", date: "2024-06", category: "رياضي", img: "event02.jpg" },
-    { title: "ماراثون البرمجة", date: "2024-07", category: "تقني", img: "event03.jpg" },
-    { title: "دورة في الذكاء الاصطناعي", date: "2024-08", category: "تعليمي", img: "event04.jpg" },
-    { title: "معرض مشاريع التخرج التقنية", date: "2024-09", category: "أكاديمي", img: "event05.jpg" },
-    { title: "منتدى المحاسبة والتدقيق", date: "2024-10", category: "مهني", img: "event06.jpg" },
-    { title: "دورة التحليل المالي ", date: "2024-11", category: "تعليمي", img: "event07.jpg" },
-    { title: "حفل تخرج الدفعة الجديدة", date: "2024-09", category: "احتفالي", img: "event08.jpg" }
-];
-
-function showEvents(events) {
-    const list = document.getElementById("eventsList");
-
-}
-
 // ============================================
 // DATA: Our events (like a small database)
 // ============================================
@@ -136,6 +70,75 @@ let events = [
     }
     
 ];
+
+
+//contact page
+function validateInputs(event){
+
+// prevent the page from refreshing
+    event.preventDefault();
+
+    // get alert items
+    let errAlert = document.getElementById("errorAlert");
+    let emailErrAlert = document.getElementById("emailAlert");
+    let successAlert = document.getElementById("successAlert");
+
+     // HIDE ALL ALERTS FIRST (add this)
+    errAlert.classList.add("d-none");
+    emailErrAlert.classList.add("d-none");
+    successAlert.classList.add("d-none");
+
+//    get values
+    let inputs = [
+        document.getElementById('fullName').value,
+        document.getElementById('email').value,
+        document.getElementById('message').value
+    ];
+
+    // the correct email pattern to check with the email value 
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // check if all values are not empty 
+    let isEmpty = false;
+
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i].trim() === "") {
+                isEmpty = true;
+                break;
+            }
+        }
+
+    if (isEmpty) {
+        errAlert.classList.remove("d-none");
+
+    } 
+    else if (!emailPattern.test(inputs[1])) {
+        emailErrAlert.classList.remove("d-none");
+    } 
+    else {
+        successAlert.classList.remove("d-none"); 
+    }
+}
+
+//events page
+// an array of all events we have
+const allEvents = [
+    { title: "ندوة تقنية", date: "2024-05", category: "تعليمي", img: "event01.jpg" },
+    { title: "بطولة تنس", date: "2024-06", category: "رياضي", img: "event02.jpg" },
+    { title: "ماراثون البرمجة", date: "2024-07", category: "تقني", img: "event03.jpg" },
+    { title: "دورة في الذكاء الاصطناعي", date: "2024-08", category: "تعليمي", img: "event04.jpg" },
+    { title: "معرض مشاريع التخرج التقنية", date: "2024-09", category: "أكاديمي", img: "event05.jpg" },
+    { title: "منتدى المحاسبة والتدقيق", date: "2024-10", category: "مهني", img: "event06.jpg" },
+    { title: "دورة التحليل المالي ", date: "2024-11", category: "تعليمي", img: "event07.jpg" },
+    { title: "حفل تخرج الدفعة الجديدة", date: "2024-09", category: "احتفالي", img: "event08.jpg" }
+];
+
+function showEvents(events) {
+    const list = document.getElementById("eventsList");
+
+}
+
+
 
 function displayEvents() {
     const container = document.getElementById("eventsContainer");
@@ -269,6 +272,33 @@ function displayEventDetails() {
     } else {
         detailsDiv.innerHTML = `<div class="alert alert-danger">الفعالية غير موجودة!</div>`;
     }
+}
+
+function showStaticRelated() {
+    const relatedContainer = document.getElementById("staticRelatedEvents");
+    if (!relatedContainer) return;
+
+    const staticList = events.slice(0, 3); 
+
+    relatedContainer.innerHTML = ""; 
+
+    staticList.forEach(e => {
+        relatedContainer.innerHTML += `
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="${e.image}" class="card-img-top" alt="${e.title}" style="height: 160px; object-fit: cover;">
+                    
+                    <div class="card-body text-center">
+                        <h6 class="card-title text-truncate">${e.title}</h6>
+                        
+                        <button class="btn btn-sm btn-primary mt-2" onclick="goToEvent(${e.id})">
+                            عرض التفاصيل
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
 }
 
 // home page
