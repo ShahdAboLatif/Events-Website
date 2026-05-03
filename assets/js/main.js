@@ -11,7 +11,7 @@ let events = [
         image: "./assets/img/qanauat1.jpg",
         mapImg: "./assets/img/qanauatmap.jpg",
         description: "استكشاف ساحر لآثار مدينة قنوات التاريخية (كاناثا القديمة)، حيث تأخذكم هذه الرحلة عبر الزمن بين المعابد الرومانية، الكنائس البيزنطية، والقصور الأثرية التي تعكس عراقة العمارة في جبل العرب.",
-        gallery: ["./assets/img/qanauat1.jpg", "./assets/img/qanauat2.jpg", "./assets/img/qanauat3.jpg", "./assets/img/qanauat4.jpg", "./assets/img/qanauatmap.jpg"]
+        gallery: ["./assets/img/qanauat1.jpg", "./assets/img/qanauat2.jpg", "./assets/img/qanauat3.jpg", "./assets/img/qanauat4.jpg"]
     },
     {
         id: 2,
@@ -22,7 +22,7 @@ let events = [
         image: "./assets/img/dam1.jpg",
         mapImg: "./assets/img/dammap.jpg",
         description: "يوم مخصص للاستجمام والاستمتاع بالطبيعة الخلابة عند سد الرحى. تشمل الرحلة جولات مشي حول البحيرة، وفرصاً لالتقاط أجمل الصور الطبيعية بعيداً عن ضجيج المدينة في أجواء ربيعية منعشة.",
-        gallery: ["./assets/img/dam1.jpg", "./assets/img/dam2.jpg", "./assets/img/dam3.jpg", "./assets/img/dammap.jpg"]
+        gallery: ["./assets/img/dam1.jpg", "./assets/img/dam2.jpg", "./assets/img/dam3.jpg"]
     },
     {
         id: 3,
@@ -33,7 +33,7 @@ let events = [
         image: "./assets/img/syevent1.jpg",
         mapImg: "./assets/img/syevent_map.jpg",
         description: "حدث أكاديمي رائد يجمع كبرى الجامعات والمؤسسات التعليمية من مختلف أنحاء الوطن العربي، لتبادل الخبرات ومناقشة مستقبل التعليم العالي وفتح آفاق جديدة للطلاب والباحثين.",
-        gallery: ["./assets/img/syevent1.jpg", "./assets/img/syevent2.jpg", "./assets/img/syevent3.jpg", "./assets/img/syevent4.jpg", "./assets/img/syevent_map.jpg"]
+        gallery: ["./assets/img/syevent1.jpg", "./assets/img/syevent2.jpg", "./assets/img/syevent3.jpg", "./assets/img/syevent4.jpg"]
     },
     {
         id: 4,
@@ -44,7 +44,7 @@ let events = [
         image: "./assets/img/book1.jpg",
         mapImg: "./assets/img/book_map.jpg",
         description: "مشاركة الجامعة الافتراضية السورية في معرض دمشق الدولي للكتاب 2026، حيث تقدم عرضاً مفصلاً عن خدماتها الأكاديمية والتعريف بالبرامج المتاحة عبر تقنية QR Code.",
-        gallery: ["./assets/img/book1.jpg", "./assets/img/book2.jpg", "./assets/img/book3.jpg", "./assets/img/book4.jpg", "./assets/img/book5.jpg", "./assets/img/book_map.jpg"]
+        gallery: ["./assets/img/book1.jpg", "./assets/img/book2.jpg", "./assets/img/book3.jpg", "./assets/img/book4.jpg", "./assets/img/book5.jpg"]
     },
     {
         id: 5,
@@ -55,7 +55,7 @@ let events = [
         image: "./assets/img/quiz2.jpg",
         mapImg: "./assets/img/quiz_map.jpg",
         description: "استضافة المسابقة البرمجية التأهيلية لأكاديمية Time Door اليابانية بمشاركة 360 طالباً، لتعزيز المهارات التقنية وربط التعليم الجامعي بخدمة المجتمع.",
-        gallery: ["./assets/img/quiz1.jpg", "./assets/img/quiz2.jpg", "./assets/img/quiz3.jpg", "./assets/img/quiz_map.jpg"]
+        gallery: ["./assets/img/quiz1.jpg", "./assets/img/quiz2.jpg", "./assets/img/quiz3.jpg"]
     },
     {
         id: 6,
@@ -66,7 +66,7 @@ let events = [
         image: "./assets/img/opera1.jpg",
         mapImg: "./assets/img/opera_map.jpg",
         description: "عرض مسرحي بعنوان 'أصل الحكاية' لفرقة آشتي للتراث الكردي بدار الأوبرا، يجسد لوحات راقصة وغنائية تراثية برعاية وزارة الثقافة السورية.",
-        gallery: ["./assets/img/opera1.jpg", "./assets/img/opera2.jpg", "./assets/img/opera3.jpg", "./assets/img/opera4.jpg", "./assets/img/opera5.jpg", "./assets/img/opera_map.jpg"]
+        gallery: ["./assets/img/opera1.jpg", "./assets/img/opera2.jpg", "./assets/img/opera3.jpg", "./assets/img/opera4.jpg", "./assets/img/opera5.jpg"]
     }
 
 ];
@@ -151,14 +151,14 @@ function displayEvents() {
             `
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="${event.image}" class="card-img-top" alt="${event.title}">
+                    <img src="${event.image}" class="card-img-top" alt="${event.title}" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title">${event.title}</h5>
-                        <p class="card-text text-muted">التاريخ: ${event.date}</p>
-                        <p class="card-text text-muted">المكان: ${event.location}</p>
-                        <p class="card-text text-muted">التصنيف: ${event.category}</p>
-                        <p class="card-text text-muted text-truncate">الوصف: ${event.description}</p>
-                        <button class="btn btn-primary" onclick="goToEvent(${event.id})">
+                        <p class="card-text text-muted small">${event.date}</p>
+                        <p class="card-text text-muted small"><i class="bi bi-geo-alt"></i> ${event.location}</p>
+                        <span class="badge bg-info text-dark mb-2">${event.category}</span>
+                        <p class="card-text text-truncate">${event.description}</p>
+                        <button class="btn btn-outline-primary w-100" onclick="goToEvent(${event.id})">
                             عرض التفاصيل
                         </button>
                     </div>
@@ -181,24 +181,24 @@ function goToEvent(eventId) {
 
 function displayFilteredEvents() {
     // get filters values 
-    var selectedPlace = document.getElementById("placeFilter").value;
-    var selectedDate = document.getElementById("dateFilter").value;
-    var selectedCategory = document.getElementById("categoryFilter").value;
+    let selectedPlace = document.getElementById("placeFilter").value;
+    let selectedDate = document.getElementById("dateFilter").value;
+    let selectedCategory = document.getElementById("categoryFilter").value;
     // get the event's container and empty it 
-    var container = document.getElementById("eventsContainer");
+    let container = document.getElementById("eventsContainer");
     container.innerHTML = '';
 
     // declare a new array for the filtered events 
-    var filteredResults = [];
+    let filteredResults = [];
 
     //  fill the filtered list 
-    for (var i = 0; i < events.length; i++) {
-        var currentEvent = events[i];
+    for (let i = 0; i < events.length; i++) {
+        let currentEvent = events[i];
 
 
-        var placeMatch = (selectedPlace === "all" || currentEvent.location === selectedPlace);
-        var categoryMatch = (selectedCategory === "all" || currentEvent.category === selectedCategory);
-        var dateMatch = (selectedDate === "" || currentEvent.date === selectedDate);
+        let placeMatch = (selectedPlace === "all" || currentEvent.location === selectedPlace);
+        let categoryMatch = (selectedCategory === "all" || currentEvent.category === selectedCategory);
+        let dateMatch = (selectedDate === "" || currentEvent.date === selectedDate);
 
         if (placeMatch && categoryMatch && dateMatch) {
             filteredResults.push(currentEvent);
@@ -210,14 +210,14 @@ function displayFilteredEvents() {
         const cardHTML = `
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="${event.image}" class="card-img-top" alt="${event.title}">
+                    <img src="${event.image}" class="card-img-top" alt="${event.title}" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title">${event.title}</h5>
-                        <p class="card-text text-muted">التاريخ: ${event.date}</p>
-                        <p class="card-text text-muted">المكان: ${event.location}</p>
-                        <p class="card-text text-muted">التصنيف: ${event.category}</p>
-                        <p class="card-text text-muted text-truncate">الوصف: ${event.description}</p>
-                        <button class="btn btn-primary" onclick="goToEvent(${event.id})">
+                        <p class="card-text text-muted small">${event.date}</p>
+                        <p class="card-text text-muted small"><i class="bi bi-geo-alt"></i> ${event.location}</p>
+                        <span class="badge bg-info text-dark mb-2">${event.category}</span>
+                        <p class="card-text text-truncate">${event.description}</p>
+                        <button class="btn btn-outline-primary w-100" onclick="goToEvent(${event.id})">
                             عرض التفاصيل
                         </button>
                     </div>
@@ -241,31 +241,46 @@ function displayEventDetails() {
 
     if (event) {
 
+        // Category badge
+        let categoryBadge = event.category ? `<span class="badge mb-2" style="background-color: #FF6B35; color: white;">${event.category}</span>` : "";
+
+        // Gallery
         let galleryHTML = "";
         for (let i = 0; i < event.gallery.length; i++) {
             galleryHTML += `
-                <div class="col-4">
-                    <img src="${event.gallery[i]}" class="img-fluid rounded" alt="صورة ${i + 1}">
-                </div>
-            `;
+        <div class="col-6 col-md-4">
+            <img src="${event.gallery[i]}" class="img-thumbnail" alt="صورة ${i + 1}" style="width: 400px; height: 300px; object-fit: cover;">
+        </div>
+    `;
         }
 
-        detailsDiv.innerHTML = `
+        // Map
+        let mapSection = event.mapImg ? `
+            <h4 class="mt-4 mb-3 text-center">خريطة الموقع</h4>
+            <div class="text-center">
+                <img src="${event.mapImg}" class="img-fluid rounded" alt="خريطة الموقع" style="width: 500px; height: 300px; object-fit: cover;">
+            </div>
+        ` : "";
+
+        // Final HTML
+        document.getElementById('eventDetails').innerHTML = `
             <div class="card shadow">
-                <img src="${event.image}" class="card-img-top" alt="${event.title}">
-                
+                <div class="text-center pt-3">
+                    <img src="${event.image}" class="rounded" alt="${event.title}" style="width: 600px; height: 400px; object-fit: cover;">
+                </div>
                 <div class="card-body">
+                    ${categoryBadge}
                     <h2 class="card-title">${event.title}</h2>
-                    <p><strong>التاريخ:</strong> ${event.date}</p>
-                    <p><strong>المكان:</strong> ${event.location}</p>
+                    <p class="text-muted">التاريخ: ${event.date} | المكان: ${event.location}</p>
                     <hr>
                     <p class="card-text">${event.description}</p>
+                    ${mapSection}
                     <h4 class="mt-4 mb-3">معرض الصور</h4>
                     <div class="row g-2">
                         ${galleryHTML}
                     </div>
-                    <button class="btn btn-success">إضافة إلى التقويم</button>
-                    <button class="btn btn-outline-primary">المشاركة</button>
+                    <button class="btn mt-3 me-2" style="background-color: #FF6B35; color: white;">إضافة إلى التقويم</button>
+                        <button class="btn btn-outline mt-3" style="border-color: #FF6B35; color: #FF6B35;">المشاركة</button>
                 </div>
             </div>
         `;
@@ -285,13 +300,11 @@ function showStaticRelated() {
     staticList.forEach(e => {
         relatedContainer.innerHTML += `
             <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="${e.image}" class="card-img-top" alt="${e.title}" style="height: 160px; object-fit: cover;">
-                    
+                <div class="card h-100 shadow-sm">
+                    <img src="${e.image}" class="card-img-top" alt="${e.title}" style="height: 200px; object-fit: cover;">
                     <div class="card-body text-center">
-                        <h6 class="card-title text-truncate">${e.title}</h6>
-                        
-                        <button class="btn btn-sm btn-primary mt-2" onclick="goToEvent(${e.id})">
+                        <h5 class="card-title">${e.title}</h5>
+                        <button class="btn btn-outline-primary w-100 mt-2" onclick="goToEvent(${e.id})">
                             عرض التفاصيل
                         </button>
                     </div>
@@ -303,12 +316,53 @@ function showStaticRelated() {
 
 // home page
 
-function showWeeklyEvents() {
-    // call the container
-    const container = document.getElementById("weeklyEventsList");
-    if (!container) return;
+// function showWeeklyEvents() {
+//     // call the container
+//     const container = document.getElementById("weeklyEventsList");
+//     if (!container) return;
 
-    // empty the container
+//     // empty the container
+//     container.innerHTML = "";
+
+//     // range of the current week dates
+//     const startDate = "2026-04-28";
+//     const endDate = "2026-05-02";
+
+
+//     // get the current week events from the events array
+//     events.forEach(event => {
+//         // check if the date of the current event is in the range 
+//         if (event.date >= startDate && event.date <= endDate) {
+
+//             // the template of the events cards using bootstarp 
+//             container.innerHTML += `
+//                 <div class="col-md-4 mb-4">
+//                     <div class="card h-100 shadow-sm">
+//                         <img src="${event.image}" class="card-img-top" alt="${event.title}" style="height: 200px; object-fit: cover;">
+//                         <div class="card-body">
+//                             <h5 class="card-title">${event.title}</h5>
+//                             <p class="card-text text-muted small">${event.date}</p>
+//                             <span class="badge bg-info text-dark mb-2">${event.category}</span>
+//                             <p class="card-text text-truncate">${event.description}</p>
+//                             <button class="btn btn-outline-primary w-100" onclick="goToEvent(${event.id})">
+//                                 عرض التفاصيل
+//                             </button>
+//                         </div>
+//                     </div>
+//                 </div>
+//             `;
+//         }
+//     });
+
+//     // if there is no events in this range give back this sentance
+// if (container.innerHTML === "") {
+//     container.innerHTML = "<p class='text-center'>لا توجد فعاليات بارزة في هذا النطاق الزمني.</p>";
+// }
+// }
+
+// badges filters
+function filterByBadge(category) {
+    const container = document.getElementById("weeklyEventsList");
     container.innerHTML = "";
 
     // range of the current week dates
@@ -316,12 +370,8 @@ function showWeeklyEvents() {
     const endDate = "2026-05-02";
 
 
-    // get the current week events from the events array
     events.forEach(event => {
-        // check if the date of the current event is in the range 
-        if (event.date >= startDate && event.date <= endDate) {
-
-            // the template of the events cards using bootstarp 
+        if ((category === 'all' || event.category === category) && event.date >= startDate && event.date <= endDate) {
             container.innerHTML += `
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 shadow-sm">
@@ -329,6 +379,7 @@ function showWeeklyEvents() {
                         <div class="card-body">
                             <h5 class="card-title">${event.title}</h5>
                             <p class="card-text text-muted small">${event.date}</p>
+                            <span class="badge bg-info text-dark mb-2">${event.category}</span>
                             <p class="card-text text-truncate">${event.description}</p>
                             <button class="btn btn-outline-primary w-100" onclick="goToEvent(${event.id})">
                                 عرض التفاصيل
@@ -340,33 +391,9 @@ function showWeeklyEvents() {
         }
     });
 
-    // if there is no events in this range give back this sentance
     if (container.innerHTML === "") {
-        container.innerHTML = "<p class='text-center'>لا توجد فعاليات بارزة في هذا النطاق الزمني.</p>";
+        container.innerHTML = "<p class='text-center'>لا توجد فعاليات بارزة في هذا الأسبوع لهذا التصنيف.</p>";
     }
-}
-
-// badges filters
-function filterByBadge(category) {
-    const container = document.getElementById("weeklyEventsList");
-    container.innerHTML = ""; 
-
-    events.forEach(event => {
-        if (category === 'all' || event.category === category) {
-            container.innerHTML += `
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <img src="${event.image}" class="card-img-top" style="height: 180px; object-fit: cover;">
-                        <div class="card-body">
-                            <h6 class="card-title">${event.title}</h6>
-                            <span class="badge bg-info text-dark mb-2">${event.category}</span>
-                            <button class="btn btn-sm btn-primary w-100 d-block" onclick="goToEvent(${event.id})">عرض</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-    });
 }
 // current week imgs 
 function loadWeeklyGallery() {
@@ -382,7 +409,7 @@ function loadWeeklyGallery() {
     events.forEach(event => {
         // check event date
         if (event.date >= startDate && event.date <= endDate) {
-            
+
             // the template
             event.gallery.forEach(imgUrl => {
                 allImagesHTML += `

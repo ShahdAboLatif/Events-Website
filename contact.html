@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>اتصل بنا</title>
 
-    <script src="assets/js/main.js"></script>
     <!-- bootstrap for css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -22,46 +21,58 @@
             <a href="/about.html">عن فعالياتنا</a>
             <span>اتصل بنا</span>
         </nav>
-
     </header>
 
-    <!-- alerts -->
-    <div id="errorAlert" class="alert alert-danger d-none">يرجى ملء جميع الحقول!</div>
-    <div id="emailAlert" class="alert alert-warning d-none">صيغة الإيميل غير صحيحة!</div>
-    <div id="successAlert" class="alert alert-success d-none">تم الإرسال بنجاح!</div>
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <!-- alerts -->
+                <div id="errorAlert" class="alert alert-danger d-none">يرجى ملء جميع الحقول!</div>
+                <div id="emailAlert" class="alert alert-warning d-none">صيغة الإيميل غير صحيحة!</div>
+                <div id="successAlert" class="alert alert-success d-none">تم الإرسال بنجاح!</div>
 
-    <main>
-        <section>
-            <form action="">
-                <div>
-                    <label for="fullName">الاسم الكامل</label>
-                    <input placeholder="الاسم الكامل" type="text" id="fullName" >
+                <!-- Form Section -->
+                <div class="card shadow-sm border-0 mb-5" >
+                    <div class="card-body p-4">
+                        <h2 class="text-center mb-4" style="color: #FF6B35;">تواصل معنا</h2>
+                        <form action="">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">الاسم الكامل</label>
+                                <input placeholder="الاسم الكامل" type="text" id="fullName" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">الإيميل</label>
+                                <input placeholder="الايميل" type="text" id="email" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">الرسالة</label>
+                                <textarea placeholder="الرسالة" id="message" class="form-control" rows="4"></textarea>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <input type="submit" value="ارسال" onclick="validateInputs(event)" class="btn" style="background-color: #FF6B35; color: white;">
+                                <input type="reset" title="إعادة تعيين" class="btn btn-outline-secondary" value="مسح">
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                    <label for="email">الإيميل</label>
-                    <input placeholder="الايميل" type="text" id="email">
+
+                <!-- Contact Info Section -->
+                <div class="row text-center">
+                    <div class="col-6">
+                        <h2 style="color: #FF6B35;">تواصل</h2>  
+                        <a href="" class="d-block text-decoration-none">إيميل</a>
+                        <a href="" class="d-block text-decoration-none">هاتف</a>
+                    </div>
+                    <div class="col-6">
+                        <h2 style="color: #FF6B35;">تابعنا</h2>
+                        <a href=""><img src="assets/img/facebook.png" alt="" style="width: 30px;"></a>
+                        <a href=""><img src="assets/img/instagram.png" alt="" style="width: 30px;"></a>
+                    </div>
                 </div>
-                <div>
-                    <label for="message">الرسالة</label>
-                    <textarea placeholder="الرسالة" id="message"></textarea>
-                </div>
-                <input type="submit" value="ارسال" onclick="validateInputs(event)">
-                <input type="reset" title="إعادة تعيين">
-            </form>
-        </section>
-        <section>
-            <div>
-                <h2>تواصل</h2>  
-                <a href="">إيميل</a>
-                <a href="">هاتف</a>
             </div>
-            <div>
-                <h2>تابعنا</h2>
-                <a href=""><img src="assets/img/facebook.png" alt=""></a>
-                <a href=""><img src="assets/img/instagram.png" alt=""></a>
-            </div>
-        </section>
+        </div>
     </main>
+    
     <footer>
         <div>
             <h2>تواصل</h2>
@@ -78,10 +89,9 @@
         </div>
     </footer>
 
-
     <!-- bootstrap for JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="myscript.js"></script> 
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>الرئيسية</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body dir="rtl" onload="showWeeklyEvents() ; loadWeeklyGallery()">
+<body dir="rtl" onload="filterByBadge('all') ; loadWeeklyGallery()">
     <header>
         <img src="assets/img/Logo.png" alt="Logo">
         
@@ -22,17 +22,9 @@
         
     </header>
     <main>
-        <!-- weekly events -->
-        <section class="container py-5">
-            <h2 class="mb-4">فعاليات بارزة هذا الأسبوع</h2>
-            <!-- container for the weekly events  -->
-            <div id="weeklyEventsList" class="row">
-                </div>
-        </section>
-
         <!-- badges section -->
          <section class="container py-4 text-center">
-            <h5 class="mb-3">تصفح حسب التصنيف:</h5>
+            <h2 class="mb-4">فعاليات بارزة هذا الأسبوع</h2>
             <div id="filterBadges">
                 <span class="badge rounded-pill bg-primary p-2 px-3 m-1" style="cursor:pointer" onclick="filterByBadge('all')">الكل</span>
                 <span class="badge rounded-pill bg-secondary p-2 px-3 m-1" style="cursor:pointer" onclick="filterByBadge('رياضة')">رياضة</span>
@@ -41,9 +33,18 @@
                 <span class="badge rounded-pill bg-secondary p-2 px-3 m-1" style="cursor:pointer" onclick="filterByBadge('موسيقى')">موسيقى</span>
             </div>
         </section>
+
+        <!-- weekly events -->
+        <section class="container py-5">
+            
+            <!-- container for the weekly events  -->
+            <div id="weeklyEventsList" class="row">
+                </div>
+        </section>
+
         <!-- current week events imgs -->
          <section class="container py-5 border-top">
-            <h2 class="mb-4 text-center">احدث الفعاليات</h2>
+            <h2 class="mb-4 text-center">أحدث الفعاليات</h2>
             <div id="weeklyGallery" class="row g-2">
                 </div>
         </section>

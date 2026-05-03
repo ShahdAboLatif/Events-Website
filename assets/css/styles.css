@@ -1,6 +1,5 @@
 /* full body  */
 body {
-    font-family: Arial, sans-serif;
     background-color: #f8f9fa;   
     color: #333;                 
 }
@@ -30,20 +29,35 @@ nav a, nav span {
 nav a:hover {
     color: #ff6600; 
 }
+
 /* footer */
 footer {
     background-color: white;   
     color: #333;                
-    padding: 30px 0;
+    padding: 20px 0;
     margin-top: 50px;
     text-align: center;
-    border-top: 3px solid #0056b3; 
+    border-top: 3px solid #0056b3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px; 
 }
+
+/* footer sections (divs) */
+footer div {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 15px;
+}
+
 /* footer titles */
 footer h2 {
     color: #0056b3; 
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+
 }
 
 /* footer links */
@@ -52,20 +66,65 @@ footer a {
     text-decoration: none;
     margin: 0 10px;
     font-weight: 500;
+    display: inline-block;
 }
+
+/* contact links - stack them vertically */
+footer div:first-child a {
+    display: block;
+    margin-top: 15px;
+    padding-top: 15px; 
+}
+
 /* hover effect */
 footer a:hover {
     color: #ff6600; 
 }
-/* imgs in the footer */
+
+/* social media images */
 footer img {
     width: 30px;
-    margin: 5px;
+    height: 30px;
+    margin: 5px 8px;
     transition: 0.3s;
+    vertical-align: middle;
 }
 
 footer img:hover {
-    opacity: 0.7; 
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+/* copyright section - full width */
+footer div:last-child {
+    flex-basis: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer div:last-child p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* responsive design for smaller screens */
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    footer div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    footer div:last-child {
+        margin-top: 10px;
+    }
 }
 
 /* cards style */

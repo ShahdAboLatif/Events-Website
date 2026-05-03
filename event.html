@@ -19,24 +19,26 @@
             <a href="/about.html">عن فعالياتنا</a>
             <a href="/contact.html">اتصل بنا</a>
         </nav>
-
     </header>
+    
     <main>
-       <div class="container py-5">
-        <!-- Back button -->
-        <a href="events.html" class="btn btn-secondary mb-3">← رجوع للفعاليات</a>
+        <!-- Back button moved here, outside the container -->
+        <div class="container py-3">
+            <a href="#" onclick="history.back(); return false;" class="btn" style="background-color: #FF6B35; color: white;">← رجوع للفعاليات</a>
+        </div>
         
-        <!-- Event details will show here -->
-        <div id="eventDetails"></div>
-    </div>
-    <!-- related events -->
-    <div class="container mt-5">
-        <hr>
-        <h3 class="mb-4">فعاليات قد تهمك</h3>
-        <div id="staticRelatedEvents" class="row">
-            </div>
-    </div>
+        <div class="container py-2">
+            <div id="eventDetails"></div>
+        </div>
+        
+        <!-- related events -->
+        <div class="container mt-5">
+            <hr>
+            <h3 class="mb-4">فعاليات قد تهمك</h3>
+            <div id="staticRelatedEvents" class="row"></div>
+        </div>
     </main>
+    
     <footer>
         <div>
             <h2>تواصل</h2>
